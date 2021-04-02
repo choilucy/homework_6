@@ -1,0 +1,1 @@
+Added an additional product detail pages for more than one product item (Original flavor and blackberry flavor) Blackberry is on product2.html.
