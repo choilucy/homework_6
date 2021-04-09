@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Inline&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>BunBun Bake Shop - Product</title>
+</head>
+<body>
+    <!-- Vertical menu layout -->
+    <main class="container">
+        <nav class="Left">
+            <a href="index.html">
+                <img src="logo.png" alt="BunBun Bake Shop Logo">
+            </a>
+            <ul class="menu-items">
+                <li>
+                    <a class="menu-item" href=index.html>
+                        HOME
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item active" href=browsing.html>
+                        MENU
+                    </a>
+                </li>    
+                <li>
+                    <a class="menu-item" href="#">
+                        ABOUT
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Product Description -->
+        <form id="productForm" class="Right" method="POST" action="">
+            <section class="bun-image">
+                <div class="bunbun">
+                    <img class="CinnamonBun" src="bun.png" alt="Cinnamon Bun(s)">
+                    <div class="description">
+                        <div class="item1">
+                            <p class="bunoriginal">original (GF)</p>
+                            <a class="button2" href="#">add. info</a>
+                        </div>
+                        <div class="item2">lorem ipsum. lorem ipsum.</div>
+                    </div>
+                </div>
+            </section>
+            <!-- Product Options -->        
+            <section class="list">
+                <div class="list-left">
+                    <div class="header-button">
+                        <img class="button-icon" src="1button.png" alt="one icon">
+                        <p>quantity</p>
+                    </div>
+                    <ul class="choices">
+                        <li class="choice">
+                            <p>1</p>
+                            <div class="price-choice">
+                                <p class="price">$2.00</p>
+                                <input type="radio" name="price" class="radio" value="bun.png">
+                            </div>
+                        </li>
+                        <li class="choice">
+                            <p>3</p>
+                            <div class="price-choice">
+                                <p class="price">$6.00</p>
+                                <input type="radio" name="price" class="radio" value="3buns.png">
+                            </div>
+                        </li>
+                        <li class="choice">
+                            <p>6</p>
+                            <div class="price-choice">
+                                <p class="price">$11.00</p>
+                                <input type="radio" name="price" class="radio" value="6buns.png">
+                            </div>
+                        </li>
+                        <li class="choice">
+                            <p>12</p>
+                            <div class="price-choice">
+                                <p class="price">$20.00</p>
+                                <input type="radio" name="price" class="radio" value="12buns.png">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-right">
+                    <div class="header-button">
+                        <img class="button-icon" src="2button.png" alt="two icon">
+                        <p>glazing</p>
+                    </div>
+                    <ul class="choices">
+                        <li class="choice">
+                            <p>None</p>
+                            <input type="radio" name="glazing" value="none">
+                        </li>
+                        <li class="choice">
+                            <p>Sugar Milk</p>
+                            <input type="radio" name="glazing" value="sugar-milk">
+                        </li>
+                        <li class="choice">
+                            <p>Vanilla Milk</p>
+                            <input type="radio" name="glazing" value="vanilla-milk">
+                        </li>
+                        <li class="choice">
+                            <p>Chocolate</p>
+                            <input type="radio" name="glazing" value="chocolate">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <a class="bag-container" href="cart.html">
+                <img class="bag" src="bag.png" alt="shopping bag">
+                <p class="bag-count">0</p>
+            </a>
+            <div class="cart">
+                <button type="submit" id="addtobag" class="button">ADD TO BAG</button>
+            </div>
+        </form>
+    </main>
+    <script src="product.js"></script>
+</body>
+</html>
