@@ -31,11 +31,13 @@ productForm.addEventListener("submit", function(event) {
     const items = localStorage.getItem("items");
     if (items) {
         localStorage.setItem("items", JSON.stringify([...JSON.parse(items), {
+            id: Math.random().toString(16).slice(2),
             [formData[0][0]]: formData[0][1],
             [formData[1][0]]: formData[1][1],
         }]));
     } else {
         localStorage.setItem("items", JSON.stringify([{
+            id: Math.random().toString(16).slice(2),
             [formData[0][0]]: formData[0][1],
             [formData[1][0]]: formData[1][1],
         }]));

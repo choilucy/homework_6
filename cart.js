@@ -40,7 +40,7 @@ const content = document.querySelector(".Content");
 
 const imagePaths = Object.keys(items);
 
-items.forEach((item) => {
+items.forEach((item, index) => {
     const container = document.createElement("div");
     container.classList.add("cartview")
 
@@ -60,9 +60,24 @@ items.forEach((item) => {
     container.appendChild(rightContent);
     rightContent.classList.add("rightContent")
 
-    const iconContent = document.createElement("div");
-    rightContent.appendChild(iconContent);
-    iconContent.classList.add("iconContent");
+    const xImage = document.createElement("img");
+    xImage.src = "X.png";
+    xImage.alt = "Remove Icon";
+    xImage.dataset.id = item.id;
+    rightContent.appendChild(xImage);
+    xImage.addEventListener("click", function(event) {
+        let newItems = localStorage.getItem("items");
+        newItems = JSON.parse(newItems);
+        newItems = newItems.filter((item) => item.id !== event.target.dataset.id);
+        localStorage.setItem("items", JSON.stringify(newItems));
+
+        const bagCount = localStorage.getItem("bag-count");
+        localStorage.setItem("bag-count", parseInt(bagCount) - 1);
+
+        const bagCountElem = document.querySelector(".bag-count");
+        bagCountElem.textContent = parseInt(bagCount) - 1;
+        event.target.parentNode.parentNode.remove();
+    })
 
     const priceContent= document.createElement("div");
     rightContent.appendChild(priceContent);
@@ -71,16 +86,6 @@ items.forEach((item) => {
     const flavor = document.createElement("p");
     flavor.textContent = "ORIGINAL";
     leftContent.appendChild(flavor);
-
-    const editImage = document.createElement("img");
-    editImage.src = "Edit.png";
-    editImage.alt = "Edit Icon";
-    iconContent.appendChild(editImage);
-
-    const xImage = document.createElement("img");
-    xImage.src = "X.png";
-    xImage.alt = "Remove Icon";
-    iconContent.appendChild(xImage);
 
     const quantity = document.createElement("p");
     quantity.textContent = "Quantity: " + itemMap[item.price].quantity;
@@ -106,3 +111,7 @@ items.forEach((item) => {
 const totalPrice = document.querySelector("#totalPrice");
 
 totalPrice.textContent = "$" + total + ".00"
+
+
+
+

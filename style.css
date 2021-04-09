@@ -292,15 +292,7 @@ html, body, .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.iconContent {
-    display: flex;
-    align-items: center;
-}
-
-.iconContent img:first-child {
-    margin-right: 12px;
+    align-items: flex-end;
 }
 
 .priceContent{
